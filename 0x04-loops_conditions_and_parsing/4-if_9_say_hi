@@ -5,10 +5,11 @@
 c=0
 while [ $c -le 10 ]
 do
-	echo "Best School";
+	echo "Best School"
 	if [ $c -eq 9 ]
 	then
-		echo "Hi";
+		echo "Hi"
 	fi
+
 	((c++))
 done

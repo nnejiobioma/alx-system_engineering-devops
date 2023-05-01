@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Bash script that loops from 1 to 10
+#Displays bad luck for the 4th loop
+#Displays good luck for the 8th loop
+#Displays Best School for the other loop
+
+c=0
+while [ $c -le 10 ]
+do
+	if [ $c == 4 ]
+	then
+echo "bad luck"
+	elif [ $c == 8 ]
+	then
+echo "good luck"
+	else
+echo "Best School"
+	fi
+
+	((c++))
+done
