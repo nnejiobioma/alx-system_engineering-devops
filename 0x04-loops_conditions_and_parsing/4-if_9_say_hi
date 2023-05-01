@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-#Script that displays Best School 1o times. but displays Hi on the ninth time.
+#Script that displays Best School 1o times.
+#But displays Hi on the ninth time.
 
 c=0
 while [ $c -le 10 ]
