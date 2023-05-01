@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Script that displays Best School 10 times using untill loop. for and while loop not accepted
+
+c=0
+until [ $c -ge 10 ]
+do
+	echo "Best School";
+	((c++))
+done
