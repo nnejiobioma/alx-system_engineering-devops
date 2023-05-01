@@ -2,7 +2,7 @@
 #Script that displays Best School 1o times.
 #But displays Hi on the ninth time.
 
-c=0
+c=1
 while [ $c -le 10 ]
 do
 	echo "Best School"
