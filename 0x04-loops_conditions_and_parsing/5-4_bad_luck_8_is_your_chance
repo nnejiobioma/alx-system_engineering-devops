@@ -4,7 +4,7 @@
 #Displays good luck for the 8th loop
 #Displays Best School for the other loop
 
-c=0
+c=1
 while [ $c -le 10 ]
 do
 	if [ $c == 4 ]
