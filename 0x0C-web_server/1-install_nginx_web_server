@@ -6,16 +6,6 @@
 
 apt-get update
 apt-get install -y nginx
-
-mkdir /etc/nginx/page
-touch /etc/nginx/page/page.html
-echo "Holberton School" > /etc/nginx/page/page.html
-printf %s "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     page       page.html page.htm;
-     root        /etc/nginx/page;
-}
-" > /etc/nginx/sites-available/default
-
+echo "Hello World" > /var/www/html/index.nginx-debian.html
 service nginx restart
+
