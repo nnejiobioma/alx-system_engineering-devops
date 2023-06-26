@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#configure machine to connect without
+#Typing a password.
+
+Host 100.24.253.202
+  User ubuntu
+  IdentityFile ~/.ssh/school
+  PasswordAuthentication no
