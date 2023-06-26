@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Installs Nginx server in local commputer
+# server listens @ port 80
+# it returns Hello World with a GET
+# request curl
+
+apt-get update
+apt-get install -y nginx
+
+mkdir /etc/nginx/page
+touch /etc/nginx/page/page.html
+echo "Holberton School" > /etc/nginx/page/page.html
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     page       page.html page.htm;
+     root        /etc/nginx/page;
+}
+" > /etc/nginx/sites-available/default
+
+service nginx restart
