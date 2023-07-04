@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This is used to to fix issues with nginx server
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/mysite.com /etc/nginx/sites-enabled/default
+kill -9 "$(cat /var/run/nginx.pid)"
