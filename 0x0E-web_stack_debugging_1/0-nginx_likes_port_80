@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script helps to reconect NGINX to port 80
+
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/mysite.com /etc/nginx/sites-enabled/default
+services nginx start
