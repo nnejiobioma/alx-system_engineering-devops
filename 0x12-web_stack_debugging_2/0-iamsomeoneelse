@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script run whoami when user pass argument
+usr="$1"
+sudo -u "$usr" whoami
