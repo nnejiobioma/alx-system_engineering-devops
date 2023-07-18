@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script runs as nginx user
+set -x
+pkill apache2
+sed -i.bak '2s/^/user nginx;\n/' /etc/nginx/nginx.conf
+sed -i 's/80 default/8080 default/' /etc/nginx/sites-enabled/default
+sudo chmod u+r /etc/nginx/nginx.conf
+chown nginx:nginx /etc/nginx/nginx.conf
+sudo -u nginx service nginx start
