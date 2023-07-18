@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#this code runs ignx on a server
+pkill apache2
+sed -i 's/\([ :]\)80 default/\18080 default/' /etc/nginx/sites-enabled/default
+find /etc/nginx/nginx.conf | tee >(xargs chmod u+r) | sudo xargs chown nginx
+sudo -u nginx service nginx start
