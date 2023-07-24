@@ -22,24 +22,23 @@ def get_employee_todo_progress(employee_id):
         user_data = user_response.json()
         employee_name = user_data.get('name')
 
-
         todo_response = requests.get(todo_url)
         todo_response.raise_for_status()
         todo_data = todo_response.json()
-
 
         completed_tasks = [task for task in todo_data if task['completed']]
         done_count = len(completed_tasks)
         total_count = len(todo_data)
 
-        print(f"Employee {employee_name} is done with tasks({done_count}/{total_count}):")
+        print(f"Employee {employee_name} tasks({done_count}/{total_count}):")
         for task in completed_tasks:
             print(f"\t {task['title']}")
 
         # Export to CSV
         filename = f"{employee_id}.csv"
         with open(filename, mode='w', newline='') as csvfile:
-            fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+            fieldnames = ["USER_ID", "USERNAME",
+                          "TASK_COMPLETED_STATUS", "TASK_TITLE"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             writer.writeheader()
