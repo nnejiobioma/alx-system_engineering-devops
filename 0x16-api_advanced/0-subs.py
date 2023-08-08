@@ -13,8 +13,8 @@
 
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     header = {"User-Agent": "User-Agent"}
-    response = requests.get(url, headers=hdr, allow_redirects=False)
-    if response.status_code >= 300:
-	return response.json().get('data', {}).get('subscribers', 0)
+    res = requests.get(url, headers=header, allow_redirects=False)
+    if res.status_code >= 300:
+	return res.json().get('data', {}).get('subscribers', 0)
     else:
         return 0
