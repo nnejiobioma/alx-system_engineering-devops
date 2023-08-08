@@ -25,4 +25,4 @@ def top_ten(subreddit):
         print(*info, sep='\n')
         # pprint.pprint(res.json())
     except:
-        print(None
+        print('None')
